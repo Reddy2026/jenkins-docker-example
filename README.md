@@ -1,6 +1,6 @@
 # jenkins-docker-example
 
-pipleline
+/*pipleline
 pipeline {
     agent any
     environment {
@@ -26,4 +26,4 @@ pipeline {
             }
         }
     }
-}
+}*/
