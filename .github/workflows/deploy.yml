@@ -25,10 +25,3 @@ jobs:
 
       - name: Verify AWS identity
         run: aws sts get-caller-identity
-
-      - name: Deploy CloudFormation stack
-        run: |
-          aws cloudformation deploy \
-            --stack-name github-cfn-test \
-            --template-file template.yaml \
-            --capabilities CAPABILITY_NAMED_IAM
