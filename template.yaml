@@ -1,8 +1,15 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Simple test stack with auto-generated S3 bucket name
+Description: Simple test stack
+
+Parameters:
+  BucketName:
+    Type: String
 
 Resources:
   TestBucket:
     Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+
 
 
