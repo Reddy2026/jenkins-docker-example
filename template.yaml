@@ -1,15 +1,13 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Simple test stack
-
-Parameters:
-  BucketName:
-    Type: String
+Description: Simple test stack with unique S3 bucket
 
 Resources:
   TestBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Ref BucketName
+      # Let CloudFormation generate a unique name automatically
+      BucketName: !Sub "test-bucket-${AWS::StackName}-${AWS::Region}-${AWS::AccountId}"
+
 
 
 
