@@ -12,10 +12,7 @@
 					"token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
 				},
 				"StringLike": {
-					"token.actions.githubusercontent.com:sub": [
-						"repo:Reddy2026/*",
-						"repo:Reddy2026/*"
-					]
+					"token.actions.githubusercontent.com:sub": "repo:Reddy2026/jenkins-docker-example:*"
 				}
 			}
 		}
