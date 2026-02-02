@@ -1,8 +1,8 @@
-- name: Deploy S3 Bucket
-  run: |
-    aws cloudformation deploy \
-      --stack-name reddy2026-test-stack \
-      --template-file template.yaml \
-      --capabilities CAPABILITY_NAMED_IAM \
-      --region ap-south-1
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Simple test stack with auto-generated S3 bucket name
+
+Resources:
+  TestBucket:
+    Type: AWS::S3::Bucket
+
 
