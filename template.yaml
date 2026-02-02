@@ -1,12 +1,21 @@
-AWSTemplateFormatVersion: '2010-09-09'
-Description: Simple test stack with unique S3 bucket
-
-Resources:
-  TestBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      # Let CloudFormation generate a unique name automatically
-      BucketName: !Sub "test-bucket-${AWS::StackName}-${AWS::Region}-${AWS::AccountId}"
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::847850007688:oidc-provider/token.actions.githubusercontent.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringLike": {
+          "token.actions.githubusercontent.com:sub": "repo:https://github.com/Reddy2026/jenkins-docker-example:*"
+        }
+      }
+    }
+  ]
+}
+"test-bucket-${AWS::StackName}-${AWS::Region}-${AWS::AccountId}"
 
 
 
