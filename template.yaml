@@ -1,11 +1,8 @@
 AWSTemplateFormatVersion: '2010-09-09'
+Description: Simple test stack
+
 Resources:
-  VPC:
-    Type: AWS::EC2::VPC
+  TestBucket:
+    Type: AWS::S3::Bucket
     Properties:
-      CidrBlock: 10.1.0.0/16
-      EnableDnsSupport: true
-      EnableDnsHostnames: true
-      Tags:
-        - Key: Name
-          Value: Demo-VPC
+      BucketName: reddy2026-github-cfn-test-bucket
